@@ -7,6 +7,19 @@ body {
   background-color: #252525;
   font-family: sans-serif;
   width: 100vw;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  z-index: -2;
+}
+
+.input {
+  background-color: #252525;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  transition: 200ms;
 }
 
 .btn {
@@ -39,6 +52,7 @@ body {
 section {
   background-color: #252525;
   width: 100%;
+  max-width: 40rem;
   margin: 0 auto;
   height: fit-content;
 }
@@ -102,7 +116,7 @@ section {
 }
 
 .rest_time_between_sets {
-  background-color: rgba(84, 44, 227, 0.2);
+  background-color: rgba(227, 142, 44, 0.2);
 }
 
 .number_of_rounds {
@@ -134,10 +148,90 @@ section {
 
 .start {
   width: 20rem;
-  height: 3rem;
+  height: fit-content;
   background-color: green;
   color: whitesmoke;
   font-weight: 700;
-  font-size: 2rem;
   text-transform: uppercase;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+}
+
+/* --------output----------- */
+
+.output_section {
+  width: 100%;
+  max-width: 40rem;
+  background-color: yellow;
+  display: grid;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.time_out {
+  position: relative;
+  color: #252525;
+  width: 160px;
+  height: 160px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: auto;
+  zoom: 2;
+  box-shadow: 4px 4px 10px -1px rgba(0, 0, 0, 0.15),
+    -4px -4px 20px -1px rgba(255, 255, 255, 0.7);
+}
+
+.time_in {
+  color: #252525;
+  width: 120px;
+  height: 120px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 10px -1px rgba(0, 0, 0, 0.15),
+    -4px -4px 20px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    inset 4px 4px 6px -1px rgba(0, 0, 0, 0.15),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7);
+}
+
+.back {
+  background-color: #d40909;
+  margin: auto;
+}
+
+.time_counter {
+  font-size: 40px;
+  color: green;
+  text-transform: uppercase;
+}
+
+svg {
+  fill: none;
+  stroke: green;
+  stroke-width: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  stroke-dasharray: 439.11236572265625;
+  stroke-dashoffset: 439.11236572265625;
+  rotate: -90deg;
+  animation: none 0ms linear forwards;
+}
+
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
