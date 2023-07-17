@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chela+One&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="index.js" defer></script>
+    <title>timer</title>
+  </head>
+  <body>
+    <h1 class="greeting">Welcome to tabata timer app</h1>
+    <section class="time_section">
+      <div class="work_time">
+        <h1 class="time_name">work</h1>
+        <div class="buttons">
+          <button class="btn" id="wt20">20 s</button>
+          <button class="btn" id="wt30">30 s</button>
+          <button class="btn" id="wt45">45 s</button>
+          <button class="btn" id="wt50">50 s</button>
+        </div>
+      </div>
+      <div class="rest_time">
+        <h1 class="time_name">rest</h1>
+        <div class="buttons">
+          <button class="btn" id="rt10">10 s</button>
+          <button class="btn" id="rt15">15 s</button>
+          <button class="btn" id="rt20">20 s</button>
+          <button class="btn" id="rt30">30 s</button>
+          <button class="btn" id="rt45">45 s</button>
+        </div>
+      </div>
+      <div class="number_of_rounds">
+        <h1 class="time_name">rounds</h1>
+        <div class="buttons">
+          <button class="btn wider" id="r4">4</button>
+          <button class="btn wider" id="r6">6</button>
+          <button class="btn wider" id="r8">8</button>
+          <button class="btn wider" id="r10">10</button>
+          <button class="btn wider clicked" id="r12">12</button>
+        </div>
+      </div>
+      <div class="number_of_set">
+        <h1 class="time_name">sets</h1>
+        <div class="buttons">
+          <button class="btn wider clicked" id="s1">1</button>
+          <button class="btn wider" id="s2">2</button>
+          <button class="btn wider" id="s3">3</button>
+          <button class="btn wider" id="s4">4</button>
+          <button class="btn wider" id="s5">5</button>
+        </div>
+      </div>
+      <div class="rest_time_between_sets" id="sets" style="display: none;">
+        <h1 class="time_name">rest</h1>
+        <div class="buttons">
+          <button class="btn" id="rr1">0.5 min</button>
+          <button class="btn" id="rr2">1 min</button>
+          <button class="btn" id="rr3">1.5 min</button>
+          <button class="btn" id="rr4">2 min</button>
+          <button class="btn" id="rr5">3 min</button>
+        </div>
+      </div>
+    </section>
+    <section class="start_section">
+      <button class="btn start" id="start">s t a r t</button>
+    </section>
+    <!-- <section class="output_section">
+      <h1>here goes time</h1>
+    </section> -->
+  </body>
+</html>
