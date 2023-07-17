@@ -12,6 +12,8 @@ import { RRclicks } from "./functions.js";
 
 export let data = { workTime: 0, restTime: 0, rounds: 0, sets: 1, rest: 0 };
 
+import { cycle } from "./functions.js";
+
 clearWorkTime();
 clearRestTime();
 clearRestRest();
@@ -23,7 +25,15 @@ Sclicks();
 RRclicks();
 Rclicks();
 
-document.getElementById("start").addEventListener("click", function () {
-  console.log(data);
+document.getElementById("back").addEventListener("click", function () {
+  document.getElementById("input").style.transform = "translateX(0)";
 });
 
+document.getElementById("start").addEventListener("click", function () {
+  console.log(data);
+  if(data.workTime){
+    document.getElementById("input").style.transform = "translateX(-100%)";
+    cycle(data.workTime);
+  }
+  
+});
