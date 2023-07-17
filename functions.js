@@ -130,7 +130,7 @@ export function Sclicks() {
     clearSets();
     s1.className = "btn clicked";
     data.sets = 1;
-    document.getElementById("sets").style.display = "none"
+    document.getElementById("sets").style.display = "none";
   });
 
   s2.addEventListener("click", function () {
@@ -222,4 +222,22 @@ export function clearRestRest() {
   for (var i = 0; i < rr.length; i++) {
     document.getElementById(`rr${rr[i]}`).className = "btn";
   }
+}
+
+export function cycle(counter) {
+  document.getElementById("SVG").style.animationDuration = `${
+    counter + 1
+  }000ms`;
+  document.getElementById("SVG").style.animationName = `anim`;
+  let time_counter = document.getElementById("time_counter");
+  time_counter.innerText = "go";
+  let a = counter;
+  setInterval(function () {
+    if (a == 0) {
+      clearInterval();
+    } else {
+      a -= 1;
+      time_counter.innerText = a;
+    }
+  }, 1000);
 }
