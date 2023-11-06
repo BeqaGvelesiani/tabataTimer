@@ -14,7 +14,7 @@ body {
 }
 
 .input {
-  background-color: #252A34;
+  background-color: #1F1717;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@ body {
 }
 
 section {
-  background-color: #252A34;
+  background-color: none;
   width: 100%;
   max-width: 40rem;
   margin: 0 auto;
@@ -133,7 +133,7 @@ section {
   display: grid;
   place-items: center;
   height: 5rem;
-  background-color: #252A34;
+  background-color: none;
 }
 
 .start {
