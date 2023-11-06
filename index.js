@@ -1,15 +1,15 @@
 let data = [0, 0, 0, 1, 0];
 
-buttonAction("wt20", 0, 20000);
-buttonAction("wt30", 0, 30000);
-buttonAction("wt45", 0, 45000);
-buttonAction("wt50", 0, 50000);
+buttonAction("wt20", 0, 20);
+buttonAction("wt30", 0, 30);
+buttonAction("wt45", 0, 45);
+buttonAction("wt50", 0, 50);
 //----------//
-buttonAction("rt10", 1, 10000);
-buttonAction("rt15", 1, 15000);
-buttonAction("rt20", 1, 20000);
-buttonAction("rt30", 1, 30000);
-buttonAction("rt45", 1, 45000);
+buttonAction("rt10", 1, 10);
+buttonAction("rt15", 1, 15);
+buttonAction("rt20", 1, 20);
+buttonAction("rt30", 1, 30);
+buttonAction("rt45", 1, 45);
 //---------//
 buttonAction("r4", 2, 4);
 buttonAction("r6", 2, 6);
@@ -23,23 +23,47 @@ buttonAction("s3", 3, 3);
 buttonAction("s4", 3, 4);
 buttonAction("s5", 3, 5);
 //---------//
-buttonAction("rr1", 4, 30000);
-buttonAction("rr2", 4, 60000);
-buttonAction("rr3", 4, 90000);
-buttonAction("rr4", 4, 120000);
-buttonAction("rr5", 4, 180000);
+buttonAction("rr1", 4, 30);
+buttonAction("rr2", 4, 60);
+buttonAction("rr3", 4, 90);
+buttonAction("rr4", 4, 120);
+buttonAction("rr5", 4, 180);
 
-// document.getElementById("start").addEventListener("click", function () {
-//   console.log(data);
-//   if(data.workTime){
-//     document.getElementById("input").style.transform = "translateX(-100%)";
-//     cycle(data.workTime);
-//   }
-// });
+document.getElementById("start").addEventListener("click", function () {
+  if(data[0]){
+    document.getElementById("input").style.transform = "translateX(-100%)";
+    cycle(data[0]);
+  }
+});
 
-// document.getElementById("back").addEventListener("click", function () {
-//   document.getElementById("input").style.transform = "translateX(0)";
-// });
+document.getElementById("back").addEventListener("click", function () {
+  document.getElementById("input").style.transform = "translateX(0)";
+});
+
+
+
+function cycle(counter) {
+  document.getElementById("SVG").style.animationDuration = `${counter}ms`;
+  document.getElementById("SVG").style.animationName = `anim`;
+
+  let time_counter = document.getElementById("time_counter");
+
+  time_counter.innerText = "go";
+  let a = counter;
+  setInterval(function () {
+    if (a == 0) {
+      clearInterval();
+    } else {
+      a -= 1;
+      time_counter.innerText = a;
+    }
+  }, 1000);
+}
+
+
+
+
+
 
 function buttonAction(buttonID, index, buttonVariable) {
   document.getElementById(`${buttonID}`).addEventListener("click", () => {
@@ -57,24 +81,6 @@ function buttonAction(buttonID, index, buttonVariable) {
     console.log(data);
   });
 }
-
-// function cycle(counter) {
-//   document.getElementById("SVG").style.animationDuration = `${
-//     counter + 1
-//   }000ms`;
-//   document.getElementById("SVG").style.animationName = `anim`;
-//   let time_counter = document.getElementById("time_counter");
-//   time_counter.innerText = "go";
-//   let a = counter;
-//   setInterval(function () {
-//     if (a == 0) {
-//       clearInterval();
-//     } else {
-//       a -= 1;
-//       time_counter.innerText = a;
-//     }
-//   }, 1000);
-// }
 
 function clrearButtons(a) {
   if (a === 0) {
