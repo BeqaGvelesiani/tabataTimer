@@ -32,7 +32,10 @@ buttonAction("rr5", 4, 180);
 document.getElementById("start").addEventListener("click", function () {
   if (data[0]) {
     document.getElementById("input").style.transform = "translateX(-100%)";
-    cycle(data[1], "magenta", "rest");
+
+    for (var i=1; i<data[2]; i++){
+      setInterval(cycle(data[0], "green", "go"), (data[1] * 1000))  
+    }
   }
 });
 
