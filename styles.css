@@ -124,6 +124,7 @@ section {
   box-sizing: border-box;
   color: aliceblue;
   text-shadow: 0 0 2px #252A34;
+  z-index: 3;
 }
 
 .start_section {
@@ -175,6 +176,10 @@ section {
   zoom: 2;
   box-shadow: 4px 4px 10px -1px rgba(0, 0, 0, 0.15),
     -4px -4px 20px -1px rgba(255, 255, 255, 0.7);
+}
+
+#sets {
+  transition: 1500ms;
 }
 
 .time_in {
