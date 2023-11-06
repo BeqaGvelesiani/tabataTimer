@@ -2,9 +2,21 @@
   margin: 0;
 }
 
+:root {
+  --color1: #005874;
+  --color2: #1c819e;
+  --color3: #e6e6d4;
+  --color4: #ffbe00;
+  --color5: #1f1717;
+  --green: #1a5d1a;
+  --red: red;
+  --white: whitesmoke;
+  --black: #252a34;
+}
+
 body {
-  color: #d40909;
-  background-color: #252A34;
+  color: var(--red);
+  background-color: var(--black);
   font-family: sans-serif;
   width: 100vw;
   position: relative;
@@ -14,7 +26,7 @@ body {
 }
 
 .input {
-  background-color: #1F1717;
+  background-color: var(--color5);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,13 +36,13 @@ body {
 .btn {
   font-size: 1rem;
   font-weight: 600;
-  color: rgb(12, 46, 12);
+  color: var(--color5);
   border-radius: 4px;
-  background-color: aliceblue;
+  background-color: var(--white);
   padding: 0.5rem;
   cursor: pointer;
   border: none;
-  box-shadow: inset 0px -0px 5px 2px rgba(59, 48, 48, 0.4);
+  box-shadow: inset 0px -0px 10px 1px var(--color2);
   border: #474444 1px solid;
   z-index: 3;
   opacity: 0.5;
@@ -40,14 +52,14 @@ body {
   text-align: center;
   width: fit-content;
   padding: 1rem;
-  background-color: #005874;
-  color: whitesmoke;
+  background-color: var(--color1);
+  color: var(--white);
   margin: 1rem auto;
   border-radius: 4px;
   font-size: 2rem;
   font-weight: 200;
-  font-family: 'Bebas Neue', sans-serif;
-  border: #1C819E 2px solid;
+  font-family: "Bebas Neue", sans-serif;
+  border: var(--color2) 2px solid;
 }
 
 section {
@@ -62,7 +74,7 @@ section {
   display: grid;
   grid-template-rows: 1fr 1fr;
   align-items: center;
-  color: whitesmoke;
+  color: var(--white);
   height: fit-content;
 }
 
@@ -72,12 +84,12 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -44%);
-  color: whitesmoke;
+  color: var(--white);
   font-size: 5rem;
   opacity: 0.9;
   text-shadow: 0px 0px 3px rgb(12, 12, 12);
   text-transform: uppercase;
-  font-family: 'Comfortaa', sans-serif;
+  font-family: "Comfortaa", sans-serif;
 }
 
 .buttons {
@@ -98,18 +110,18 @@ section {
   display: grid;
   gap: 10px;
   border-radius: 2px;
-  border: whitesmoke 1px solid;
+  border: var(--white) 1px solid;
 }
 
 .work_time,
 .number_of_rounds,
 .rest_time_between_sets {
-  background-color: #1C819E;
+  background-color: var(--color2);
 }
 
 .rest_time,
 .number_of_set {
-  background-color: #FFBE00;
+  background-color: var(--color4);
 }
 
 .wider {
@@ -119,13 +131,13 @@ section {
 .clicked {
   box-shadow: none;
   width: 5rem;
-  box-shadow: inset 0px -0px 15px 10px red;
+  box-shadow: inset 0px -0px 15px 10px var(--red);
   opacity: 1;
   font-weight: 600;
-  border: green solid 1px;
+  border: var(--green) solid 1px;
   box-sizing: border-box;
-  color: aliceblue;
-  text-shadow: 0 0 2px #252A34;
+  color: var(--white);
+  text-shadow: 0 0 2px var(--black);
   z-index: 3;
 }
 
@@ -139,23 +151,23 @@ section {
 .start {
   width: 20rem;
   height: fit-content;
-  background-color: #1C819E;
-  color: whitesmoke;
-  text-shadow: #005874 0px 0px 7px;
+  background-color: var(--color2);
+  color: var(--white);
+  text-shadow: var(--color1) 0px 0px 7px;
   font-weight: 900;
   text-transform: uppercase;
   padding: 0.5rem;
   text-align: center;
   margin-top: 2rem;
-  border: #A6CF98 3px solid;
-  box-shadow: inset 0px 0px 10px 3px #1C819E;
+  border: var(--color3) 3px solid;
+  box-shadow: inset 0px 0px 10px 3px #1c819e;
   box-shadow: none;
   opacity: 1;
-  font-family: 'Comfortaa', sans-serif;
+  font-family: "Comfortaa", sans-serif;
 }
 
 .starth1 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: 100;
   transform: translateY(4px);
 }
@@ -165,7 +177,7 @@ section {
 .output_section {
   width: 100%;
   max-width: 40rem;
-  background-color: #FFBE00;
+  background-color: var(--color4);
   display: grid;
   height: 100vh;
   position: absolute;
@@ -177,17 +189,17 @@ section {
 
 .time_out {
   position: relative;
-  color: #252525;
+  color: var(--color5);
   width: 160px;
   height: 160px;
-  background-color: whitesmoke;
+  background-color: var(--white);
   border-radius: 50%;
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
   margin: auto;
   zoom: 2;
-  box-shadow: 4px 4px 10px -1px rgba(0, 0, 0, 0.15),
+  box-shadow: 4px 4px 10px -1px var(--color5),
     -4px -4px 20px -1px rgba(255, 255, 255, 0.7);
 }
 
@@ -199,7 +211,7 @@ section {
   color: #252525;
   width: 120px;
   height: 120px;
-  background-color: whitesmoke;
+  background-color: var(--white);
   border-radius: 50%;
   text-align: center;
   margin: auto;
@@ -214,19 +226,19 @@ section {
 }
 
 .back {
-  background-color: #d40909;
+  background-color: var(--red);
   margin: auto;
 }
 
 .time_counter {
   font-size: 40px;
-  color: green;
+  color: var(--green);
   text-transform: uppercase;
 }
 
 svg {
   fill: none;
-  stroke: green;
+  stroke: var(--green);
   stroke-width: 20px;
   position: absolute;
   top: 0;
