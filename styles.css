@@ -40,13 +40,14 @@ body {
   text-align: center;
   width: fit-content;
   padding: 1rem;
-  background-color: rgb(65, 68, 70);
+  background-color: #005874;
   color: whitesmoke;
   margin: 1rem auto;
-  border-radius: 1rem;
+  border-radius: 4px;
   font-size: 2rem;
   font-weight: 200;
   font-family: 'Bebas Neue', sans-serif;
+  border: #1C819E 2px solid;
 }
 
 section {
@@ -71,7 +72,7 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -44%);
-  color: #D83F31;
+  color: whitesmoke;
   font-size: 5rem;
   opacity: 0.9;
   text-shadow: 0px 0px 3px rgb(12, 12, 12);
@@ -97,17 +98,18 @@ section {
   display: grid;
   gap: 10px;
   border-radius: 2px;
+  border: whitesmoke 1px solid;
 }
 
 .work_time,
 .number_of_rounds,
 .rest_time_between_sets {
-  background-color: #219c902f;
+  background-color: #1C819E;
 }
 
 .rest_time,
 .number_of_set {
-  background-color: #ee92222b;
+  background-color: #FFBE00;
 }
 
 .wider {
@@ -137,14 +139,25 @@ section {
 .start {
   width: 20rem;
   height: fit-content;
-  background-color: #557C55;
+  background-color: #1C819E;
   color: whitesmoke;
-  font-weight: 700;
+  text-shadow: #005874 0px 0px 7px;
+  font-weight: 900;
   text-transform: uppercase;
   padding: 0.5rem;
-  font-size: 1.3rem;
+  text-align: center;
   margin-top: 2rem;
   border: #A6CF98 3px solid;
+  box-shadow: inset 0px 0px 10px 3px #1C819E;
+  box-shadow: none;
+  opacity: 1;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.starth1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 100;
+  transform: translateY(4px);
 }
 
 /* --------output----------- */
@@ -152,7 +165,7 @@ section {
 .output_section {
   width: 100%;
   max-width: 40rem;
-  background-color: yellow;
+  background-color: #FFBE00;
   display: grid;
   height: 100vh;
   position: absolute;

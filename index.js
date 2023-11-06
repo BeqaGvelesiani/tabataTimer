@@ -30,7 +30,7 @@ buttonAction("rr4", 4, 120);
 buttonAction("rr5", 4, 180);
 
 document.getElementById("start").addEventListener("click", function () {
-  if(data[0]){
+  if (data[0]) {
     document.getElementById("input").style.transform = "translateX(-100%)";
     cycle(data[0]);
   }
@@ -39,8 +39,6 @@ document.getElementById("start").addEventListener("click", function () {
 document.getElementById("back").addEventListener("click", function () {
   document.getElementById("input").style.transform = "translateX(0)";
 });
-
-
 
 function cycle(counter) {
   document.getElementById("SVG").style.animationDuration = `${counter}ms`;
@@ -60,11 +58,6 @@ function cycle(counter) {
   }, 1000);
 }
 
-
-
-
-
-
 function buttonAction(buttonID, index, buttonVariable) {
   document.getElementById(`${buttonID}`).addEventListener("click", () => {
     clrearButtons(index);
@@ -73,12 +66,22 @@ function buttonAction(buttonID, index, buttonVariable) {
     if (data[3] != 1) {
       data[4] = 30000;
       document.getElementById("sets").style.display = "block";
-    }else{
+    } else {
       document.getElementById("sets").style.display = "none";
       data[4] = 0;
     }
     data[index] = buttonVariable;
     console.log(data);
+    //--------//
+    if (data[0] === 0) {
+      document.getElementById("start").style.boxShadow = "none";
+      document.getElementById("starth1").style.fontWeight = "100";
+    } else {
+      document.getElementById("start").style.boxShadow =
+        "0px 0px 15px 5px green";
+      document.getElementById("starth1").style.fontWeight = "900";
+    }
+    //--------//
   });
 }
 
