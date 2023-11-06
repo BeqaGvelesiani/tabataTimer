@@ -1,4 +1,4 @@
-let data = [0, 0, 0, 1, 0];
+let data = [0, 0, 0, 0, 0];
 
 buttonAction("wt20", 0, 20);
 buttonAction("wt30", 0, 30);
@@ -32,7 +32,7 @@ buttonAction("rr5", 4, 180);
 document.getElementById("start").addEventListener("click", function () {
   if (data[0]) {
     document.getElementById("input").style.transform = "translateX(-100%)";
-    cycle(data[0]);
+    cycle(data[0], "red");
   }
 });
 
@@ -40,9 +40,11 @@ document.getElementById("back").addEventListener("click", function () {
   document.getElementById("input").style.transform = "translateX(0)";
 });
 
-function cycle(counter) {
-  document.getElementById("SVG").style.animationDuration = `${counter}ms`;
-  document.getElementById("SVG").style.animationName = `anim`;
+function cycle(counter, color) {
+  let svg = document.getElementById("SVG")
+  svg.style.animationDuration = `${counter * 1000}ms`;
+  svg.style.animationName = `anim`;
+  svg.style.stroke = `${color}`;
 
   let time_counter = document.getElementById("time_counter");
 
@@ -63,8 +65,8 @@ function buttonAction(buttonID, index, buttonVariable) {
     clrearButtons(index);
     data[index] = buttonVariable;
     document.getElementById(`${buttonID}`).className = "btn wider clicked";
-    if (data[3] != 1) {
-      data[4] = 30000;
+    if (data[3] != 0) {
+      data[4] = 30;
       document.getElementById("sets").style.display = "block";
     } else {
       document.getElementById("sets").style.display = "none";

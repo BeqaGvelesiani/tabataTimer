@@ -238,7 +238,7 @@ section {
 
 svg {
   fill: none;
-  stroke: var(--green);
+  stroke: var(--color4);
   stroke-width: 20px;
   position: absolute;
   top: 0;
