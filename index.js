@@ -32,7 +32,7 @@ buttonAction("rr5", 4, 180);
 document.getElementById("start").addEventListener("click", function () {
   if (data[0]) {
     document.getElementById("input").style.transform = "translateX(-100%)";
-    cycle(data[0], "red");
+    cycle(data[1], "magenta", "rest");
   }
 });
 
@@ -40,16 +40,17 @@ document.getElementById("back").addEventListener("click", function () {
   document.getElementById("input").style.transform = "translateX(0)";
 });
 
-function cycle(counter, color) {
+function cycle(time, color, message) {
   let svg = document.getElementById("SVG")
-  svg.style.animationDuration = `${counter * 1000}ms`;
+  let time_counter = document.getElementById("time_counter");
+  svg.style.animationDuration = `${time * 1000}ms`;
   svg.style.animationName = `anim`;
   svg.style.stroke = `${color}`;
 
-  let time_counter = document.getElementById("time_counter");
-
-  time_counter.innerText = "go";
-  let a = counter;
+  time_counter.style.color = `${color}`
+  time_counter.innerText = `${message}`;
+  
+  let a = time;
   setInterval(function () {
     if (a == 0) {
       clearInterval();
