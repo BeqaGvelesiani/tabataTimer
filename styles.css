@@ -25,15 +25,15 @@ body {
   font-size: 1rem;
   font-weight: 600;
   color: rgb(12, 46, 12);
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: aliceblue;
   padding: 0.5rem;
   cursor: pointer;
   border: none;
-  box-shadow: 0px -0px 15px 0px rgba(40, 33, 33, 0.75);
+  box-shadow: inset 0px -0px 5px 2px rgba(59, 48, 48, 0.4);
+  border: #474444 1px solid;
   z-index: 3;
-  opacity: 0.75;
-  transform: translatey(-10px);
+  opacity: 0.5;
 }
 
 .greeting {
@@ -46,7 +46,7 @@ body {
   border-radius: 1rem;
   font-size: 2rem;
   font-weight: 200;
-  font-family: "Chela One", cursive;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 section {
@@ -61,11 +61,6 @@ section {
   display: grid;
   grid-template-rows: 1fr 1fr;
   align-items: center;
-  /* background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  ); */
   color: whitesmoke;
   height: fit-content;
 }
@@ -75,16 +70,16 @@ section {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -44%);
   color: #D83F31;
-  font-size: 6rem;
-  opacity: 0.7;
-  text-shadow: 0px 0px 5px whitesmoke;
+  font-size: 5rem;
+  opacity: 0.9;
+  text-shadow: 0px 0px 3px rgb(12, 12, 12);
   text-transform: uppercase;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 .buttons {
-  margin-top: 1rem;
   display: flex;
   justify-content: space-around;
 }
@@ -94,11 +89,11 @@ section {
 .number_of_set,
 .number_of_rounds,
 .rest_time_between_sets {
-  padding: 1rem;
-  width: 90%;
-  margin: 1.5rem auto;
+  padding: 1.3rem;
+  width: 100%;
+  margin: 1rem auto;
   position: relative;
-  height: 3rem;
+  height: 5rem;
   display: grid;
   gap: 10px;
   border-radius: 2px;
@@ -107,12 +102,12 @@ section {
 .work_time,
 .number_of_rounds,
 .rest_time_between_sets {
-  background-color: #219C90;
+  background-color: #219c902f;
 }
 
 .rest_time,
 .number_of_set {
-  background-color: #EE9322;
+  background-color: #ee92222b;
 }
 
 .wider {
@@ -141,13 +136,14 @@ section {
 .start {
   width: 20rem;
   height: fit-content;
-  background-color: #38E54D;
+  background-color: #557C55;
   color: whitesmoke;
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.5rem;
   font-size: 1.3rem;
   margin-top: 2rem;
+  border: #A6CF98 3px solid;
 }
 
 /* --------output----------- */

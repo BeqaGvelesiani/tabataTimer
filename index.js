@@ -1,29 +1,41 @@
-import { clearRestTime } from "./functions.js";
-import { clearWorkTime } from "./functions.js";
-import { clearSets } from "./functions.js";
-import { clearRestRest } from "./functions.js";
-import { clearRound } from "./functions.js";
 
-import { WTclicks } from "./functions.js";
-import { RTclicks } from "./functions.js";
-import { Rclicks } from "./functions.js";
-import { Sclicks } from "./functions.js";
 import { RRclicks } from "./functions.js";
 
-export let data = { workTime: 0, restTime: 0, rounds: 0, sets: 1, rest: 0 };
+export let data = [0, 0, 0, 1, 0];
 
 import { cycle } from "./functions.js";
 
-clearWorkTime();
-clearRestTime();
-clearRestRest();
-clearRound();
+import { buttonAction } from "./functions.js";
 
-WTclicks();
-RTclicks();
-Sclicks();
-RRclicks();
-Rclicks();
+buttonAction('wt20', 0, 20);
+buttonAction("wt30", 0, 30);
+buttonAction("wt45", 0, 45);
+buttonAction("wt50", 0, 50);
+//----------//
+buttonAction("rt10", 1, 10);
+buttonAction("rt15", 1, 15);
+buttonAction("rt20", 1, 20);
+buttonAction("rt30", 1, 30);
+buttonAction("rt45", 1, 45);
+//---------//
+buttonAction("r4", 2, 2);
+buttonAction("r6", 2, 6);
+buttonAction("r8", 2, 8);
+buttonAction("r10", 2, 10);
+buttonAction("r12", 2, 12);
+//---------//
+buttonAction("s1", 3, 1);
+buttonAction("s2", 3, 2);
+buttonAction("s3", 3, 3);
+buttonAction("s4", 3, 4);
+buttonAction("s5", 3, 5);
+//---------//
+buttonAction("rr1", 4, 30*1000);
+buttonAction("rr2", 4, 60 * 1000);
+buttonAction("rr3", 4, 90 * 1000);
+buttonAction("rr4", 4, 120 * 1000);
+buttonAction("rr5", 4, 180 * 1000);
+
 
 document.getElementById("back").addEventListener("click", function () {
   document.getElementById("input").style.transform = "translateX(0)";
@@ -35,5 +47,4 @@ document.getElementById("start").addEventListener("click", function () {
     document.getElementById("input").style.transform = "translateX(-100%)";
     cycle(data.workTime);
   }
-  
 });
