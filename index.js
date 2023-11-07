@@ -1,6 +1,8 @@
-let data = [0, 0, 0, 0, 0];
+export let data = [0, 0, 0, 0, 0];
 
-buttonAction("wt20", 0, 20);
+import { foo } from "./functions.js";
+
+buttonAction("wt20", 0, 5);
 buttonAction("wt30", 0, 30);
 buttonAction("wt45", 0, 45);
 buttonAction("wt50", 0, 50);
@@ -32,27 +34,34 @@ buttonAction("rr5", 4, 180);
 document.getElementById("start").addEventListener("click", function () {
   if (data[0]) {
     document.getElementById("input").style.transform = "translateX(-100%)";
-
-    for (var i=1; i<data[2]; i++){
-      setInterval(cycle(data[0], "green", "go"), (data[1] * 1000))  
-    }
+    cycle(data[0], "green", "go");
+    setTimeout(move, data[0] * 1000);
   }
 });
+
+function move() {
+  cycle(data[1], "red", "rest");
+}
+
+
 
 document.getElementById("back").addEventListener("click", function () {
   document.getElementById("input").style.transform = "translateX(0)";
 });
 
 function cycle(time, color, message) {
-  let svg = document.getElementById("SVG")
+  //let svg = document.getElementById("SVG");
   let time_counter = document.getElementById("time_counter");
-  svg.style.animationDuration = `${time * 1000}ms`;
-  svg.style.animationName = `anim`;
-  svg.style.stroke = `${color}`;
+  //svg.style.strokeDashoffset = "439.11236572265625";
+  //svg.style.animationDuration = `${time * 1000}ms`;
+  //svg.style.animationName = `anim`;
+  //svg.style.stroke = `${color}`;
 
-  time_counter.style.color = `${color}`
+  let percent = time/100
+
+  time_counter.style.color = `${color}`;
   time_counter.innerText = `${message}`;
-  
+
   let a = time;
   setInterval(function () {
     if (a == 0) {
@@ -127,3 +136,21 @@ function clrearButtons(a) {
     document.getElementById("rr5").className = "btn";
   }
 }
+
+
+
+
+function speedometer(percent, color) {
+  
+  for (var i = 0; i < percent; i++) {
+    document.getElementById(`speedometerdiv`).innerHTML += `
+          <div class="speedometer" id="speedometer${i}" style="rotate: ${
+      i * 3.6
+    }deg">
+            <div class="line" style="background-color: ${color}"></div>
+          </div>
+  `;
+  }
+}
+
+speedometer(41.2, `red`)

@@ -236,6 +236,26 @@ section {
   text-transform: uppercase;
 }
 
+.speedometer {
+  background-color: #005874;
+  height: 0px;
+  width: 0px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.line {
+  width: 3px;
+  height: 20px;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: #00ff00 0px 0px 2px;
+}
+
 svg {
   fill: none;
   stroke: var(--color4);

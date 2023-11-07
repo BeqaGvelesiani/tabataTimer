@@ -36,7 +36,7 @@
     <title>timer</title>
   </head>
   <body>
-    <div class="input" id="input">
+    <div class="input" id="input" style="display: none">
       <h1 class="greeting">Tabata timer</h1>
       <section class="time_section">
         <div class="work_time">
@@ -102,21 +102,20 @@
             <h1 class="time_counter" id="time_counter">15</h1>
           </div>
         </div>
-        <svg
+        <div class="speedometerdiv" id="speedometerdiv">
+          <div class="speedometer" id="speedometer1">
+            <div class="line" id="l1"></div>
+          </div>
+        </div>
+        <!-- <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           width="160px"
           height="160px"
           id="SVG"
         >
-          <defs>
-            <linearGradient id="GradientColor">
-              <stop offset="0%" stop-color="#e91e63" />
-              <stop offset="100%" stop-color="#673ab7" />
-            </linearGradient>
-          </defs>
           <circle cx="80px" cy="80px" r="70px" stroke-linecap="round" />
-        </svg>
+        </svg> -->
       </div>
 
       <button class="btn start back" id="back">👨🏻‍🦽 BACK</button>
