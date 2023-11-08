@@ -25,16 +25,35 @@ setButtons();
 //   //setInterval(time, 1000);
 // }
 
-let per = document.getElementById("speedometer1");
+let counter = 1;
 
-for (var i = 0; i < 20; i++) {
-  setTimeout(() => {
-    per.innerText = i;
-  }, i * 1000);
+
+
+
+
+function execute(time,color,message){
+
+  document.getElementById("time_counter").innerText = `${message}`;
+
+  setTimeout(()=>{
+    document.getElementById("time_counter").innerText = `${time}`;
+  }, 1000)
+
+  let interval = setInterval(function () {
+    if (counter == 100) {
+      clearInterval(interval);
+    }
+    console.log(counter++);
+    speedometer(time, `${color}`);
+  }, time * 10);
+
 }
 
-set("green");
 
-function set(color) {
-  speedometer(document.getElementById("speedometer1").innerText, `${color}`);
-}
+execute(10, "green", "go")
+
+
+
+
+
+

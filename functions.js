@@ -1,9 +1,23 @@
 import { data } from "./index.js";
 
+let i = 0
 
-export function speedometer(percent, color) {
-  document.getElementById(`speedometerdiv`).innerHTML = "";
-  for (var i = 0; i < percent; i++) {
+export function speedometer(color) {
+  document.getElementById("time_counter").style.color = `${color}`;
+  
+  //document.getElementById(`speedometerdiv`).innerHTML = "";
+  // for (var i = 0; i < percent; i++) {
+  //   document.getElementById(`speedometerdiv`).innerHTML += `
+  //         <div class="speedometer" id="speedometer${i}" style="rotate: ${
+  //     i * 2.4
+  //   }deg">
+  //           <div class="line" style="background-color: ${color}" style="box-shadow: ${color}"></div>
+  //         </div>
+  // `;
+  // }
+
+  i++
+
     document.getElementById(`speedometerdiv`).innerHTML += `
           <div class="speedometer" id="speedometer${i}" style="rotate: ${
       i * 3.6
@@ -11,7 +25,8 @@ export function speedometer(percent, color) {
             <div class="line" style="background-color: ${color}" style="box-shadow: ${color}"></div>
           </div>
   `;
-  }
+    
+  
 }
 
 export function buttonAction(buttonID, index, buttonVariable) {
