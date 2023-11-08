@@ -1,6 +1,6 @@
 import { data } from "./index.js";
 
-let i = 0
+export let i = 0
 
 export function speedometer(color) {
   document.getElementById("time_counter").style.color = `${color}`;
