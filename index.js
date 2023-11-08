@@ -1,6 +1,6 @@
 export let data = [0, 0, 0, 0, 0];
 
-import { speedometer } from "./functions.js";
+import { execute } from "./functions.js";
 
 import { setButtons } from "./functions.js";
 
@@ -25,32 +25,7 @@ setButtons();
 //   //setInterval(time, 1000);
 // }
 
-let counter = 1;
-
-
-
-
-
-function execute(time,color,message){
-
-  document.getElementById("time_counter").innerText = `${message}`;
-
-  setTimeout(()=>{
-    document.getElementById("time_counter").innerText = `${time}`;
-  }, 1000)
-
-  let interval = setInterval(function () {
-    if (counter == 100) {
-      clearInterval(interval);
-    }
-    console.log(counter++);
-    speedometer(time, `${color}`);
-  }, time * 10);
-
-}
-
-
-execute(10, "green", "go")
+execute(10, "magenta", "rest")
 
 
 

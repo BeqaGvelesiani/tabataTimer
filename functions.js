@@ -5,17 +5,6 @@ let i = 0
 export function speedometer(color) {
   document.getElementById("time_counter").style.color = `${color}`;
   
-  //document.getElementById(`speedometerdiv`).innerHTML = "";
-  // for (var i = 0; i < percent; i++) {
-  //   document.getElementById(`speedometerdiv`).innerHTML += `
-  //         <div class="speedometer" id="speedometer${i}" style="rotate: ${
-  //     i * 2.4
-  //   }deg">
-  //           <div class="line" style="background-color: ${color}" style="box-shadow: ${color}"></div>
-  //         </div>
-  // `;
-  // }
-
   i++
 
     document.getElementById(`speedometerdiv`).innerHTML += `
@@ -25,9 +14,37 @@ export function speedometer(color) {
             <div class="line" style="background-color: ${color}" style="box-shadow: ${color}"></div>
           </div>
   `;
-    
-  
 }
+
+export function execute(time, color, message) {
+  let counter = 1;
+
+  let a = time;
+  document.getElementById("time_counter").innerText = `${message}`;
+
+  setTimeout(() => {
+    document.getElementById("time_counter").innerText = `${time - 1}`;
+
+    let int = setInterval(function () {
+      if (a < 3) {
+        clearInterval(int);
+      }
+      console.log(a--);
+      document.getElementById("time_counter").innerText = a - 1;
+    }, 1000);
+  }, 1000);
+
+  let interval = setInterval(function () {
+    if (counter == 100) {
+      clearInterval(interval);
+    }
+    counter++;
+    //console.log(counter);
+    speedometer(`${color}`);
+  }, time * 10);
+}
+
+
 
 export function buttonAction(buttonID, index, buttonVariable) {
   document.getElementById(`${buttonID}`).addEventListener("click", () => {
