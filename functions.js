@@ -2,6 +2,7 @@ import { data } from "./index.js";
 
 
 export function speedometer(percent, color) {
+  document.getElementById(`speedometerdiv`).innerHTML = "";
   for (var i = 0; i < percent; i++) {
     document.getElementById(`speedometerdiv`).innerHTML += `
           <div class="speedometer" id="speedometer${i}" style="rotate: ${
@@ -12,7 +13,6 @@ export function speedometer(percent, color) {
   `;
   }
 }
-
 
 export function buttonAction(buttonID, index, buttonVariable) {
   document.getElementById(`${buttonID}`).addEventListener("click", () => {

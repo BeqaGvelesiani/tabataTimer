@@ -25,19 +25,16 @@ setButtons();
 //   //setInterval(time, 1000);
 // }
 
-let i = 0
+let per = document.getElementById("speedometer1");
 
-
-setTimeout
-
-//settimo(set, 20/100 * 1000)
-
-
-
-function set(){
-  i++
-  speedometer(i, `green`);
+for (var i = 0; i < 20; i++) {
+  setTimeout(() => {
+    per.innerText = i;
+  }, i * 1000);
 }
 
+set("green");
 
-
+function set(color) {
+  speedometer(document.getElementById("speedometer1").innerText, `${color}`);
+}
