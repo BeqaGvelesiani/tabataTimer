@@ -1,16 +1,16 @@
 import { data } from "./index.js";
 
-export let i = 0
+export let i = 0;
 
 export function speedometer(color) {
   document.getElementById("time_counter").style.color = `${color}`;
-  
-  i++
 
-    document.getElementById(`speedometerdiv`).innerHTML += `
+  i++;
+
+  document.getElementById(`speedometerdiv`).innerHTML += `
           <div class="speedometer" id="speedometer${i}" style="rotate: ${
-      i * 3.6
-    }deg">
+    i * 3.6
+  }deg">
             <div class="line" style="background-color: ${color}" style="box-shadow: ${color}"></div>
           </div>
   `;
@@ -25,10 +25,24 @@ export function execute(time, color, message) {
   setTimeout(() => {
     document.getElementById("time_counter").innerText = `${time - 1}`;
 
+    document.getElementById("back").addEventListener("click", function () {
+      //document.getElementById("input").style.transform = "translateX(0)";
+      //document.getElementById(`speedometerdiv`).innerHTML = "";
+      //clearTimeout();
+      //i = 0;
+    });
+
     let int = setInterval(function () {
       if (a < 3) {
         clearInterval(int);
       }
+      document.getElementById("back").addEventListener("click", function () {
+        //document.getElementById("input").style.transform = "translateX(0)";
+        //document.getElementById(`speedometerdiv`).innerHTML = "";
+        //clearInterval(int);
+        //a = time;
+        //i = 0;
+      });
       console.log(a--);
       document.getElementById("time_counter").innerText = a - 1;
     }, 1000);
@@ -39,12 +53,17 @@ export function execute(time, color, message) {
       clearInterval(interval);
     }
     counter++;
+    document.getElementById("back").addEventListener("click", function () {
+      //document.getElementById("input").style.transform = "translateX(0)";
+      //document.getElementById(`speedometerdiv`).innerHTML = "";
+      //clearInterval(interval);
+      //a = time;
+      //i = 0;
+    });
     //console.log(counter);
     speedometer(`${color}`);
   }, time * 10);
 }
-
-
 
 export function buttonAction(buttonID, index, buttonVariable) {
   document.getElementById(`${buttonID}`).addEventListener("click", () => {
@@ -72,8 +91,6 @@ export function buttonAction(buttonID, index, buttonVariable) {
     //--------//
   });
 }
-
-
 
 export function clrearButtons(a) {
   if (a === 0) {

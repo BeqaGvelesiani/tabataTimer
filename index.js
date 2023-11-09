@@ -12,8 +12,8 @@ document.getElementById("start").addEventListener("click", function () {
 });
 
 document.getElementById("back").addEventListener("click", function () {
-  document.getElementById("input").style.transform = "translateX(0)";
-  document.getElementById(`speedometerdiv`).innerHTML = ""
+  //document.getElementById("input").style.transform = "translateX(0)";
+  //document.getElementById(`speedometerdiv`).innerHTML = ""
 });
 
 
